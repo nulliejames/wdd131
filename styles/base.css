@@ -1,0 +1,241 @@
+/* ---- Dynamic fundamental CSS---- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----body---- */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    color: #111;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* ---Header--- */
+header {
+    width: 100%;
+}
+
+.header-top {
+    background-color: #20577d;
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+}
+
+header course-title {
+    padding: 1rem;
+    color: #12cc0c;
+    background-color: #1805c9;
+    justify-content: center;
+    align-items: center;
+}
+
+#course-title {
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+
+nav {
+    background-color: #333333;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 20px;
+
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main>h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 0 0 15px;
+}
+
+/* ----cards---- */
+.cards {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.card {
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.card h2 {
+    background-color: #20577d;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px;
+    margin: 0;
+}
+
+/* ---About Card */
+.card-content {
+    display: flex;
+    gap: 20px;
+    padding: 16px;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+}
+
+.about-text h3 {
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 3px;
+    margin: 14px 0 12px;
+}
+
+.card-content>img {
+    width: 123px;
+    height: 166px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* ---Resource Card --- */
+.resource-content {
+    padding: 16px 20px;
+}
+
+/* The screenshot does not show the Freetown image */
+.resource-content>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.resources {
+    padding-top: 95px;
+}
+
+.resources h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.resources ul {
+    padding-left: 20px;
+}
+
+.resources li {
+    margin-bottom: 3px;
+    font-size: 0.88rem;
+}
+
+.resources a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+.resources a:hover {
+    color: #20577d;
+}
+
+/* ---footer--- */
+footer {
+    background-color: #20577d;
+    color: white;
+    text-align: center;
+    padding: 13px 10px;
+    margin-top: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+#currentyear {
+    color: white;
+}
+
+#lastModified {
+    color: yellow;
+    font-size: 0.75rem;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 700px) {
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 8px;
+    }
+
+    main {
+        padding: 15px 10px;
+    }
+
+    main>h1 {
+        font-size: 1.8rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card-content {
+        flex-direction: column;
+    }
+
+    .card-content>img {
+        width: 140px;
+        height: auto;
+        align-self: center;
+    }
+
+    .resources {
+        padding-top: 20px;
+    }
+}
