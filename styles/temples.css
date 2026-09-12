@@ -78,8 +78,8 @@ nav a {
 /* Hover requirement */
 
 nav a:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+    background-color: var(--background-color);
+    color: var(--accent-color);
 }
 
 /* Main */
