@@ -1,0 +1,132 @@
+/* =============
+   PLACE LARGE SCREEN STYLES
+   =============*/
+
+@media screen and (min-width: 700px) {
+
+    /* Header */
+    header {
+        padding: 1.25rem 2rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+
+    /* Main */
+    main {
+        padding: 2rem;
+    }
+
+
+    /* Hero */
+    .hero {
+        height: 600px;
+        position: relative;
+    }
+
+    .hero picture,
+    .hero picture img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero picture img {
+        object-fit: cover;
+    }
+
+
+    /* Data card */
+    .data {
+        position: absolute;
+
+        top: 2rem;
+        left: 2rem;
+
+        width: 320px;
+
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+
+    /* Weather card */
+    .weather {
+        position: absolute;
+
+        right: 2rem;
+        bottom: 2rem;
+
+        width: 320px;
+
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+
+    /* Data and Weather headings */
+    .data h2,
+    .weather h2 {
+        font-size: 2rem;
+        margin: 0;
+        padding: 1rem;
+    }
+
+
+    /* Weather pseudo-element */
+    .weather h2::after {
+        content: "⛅";
+
+        margin-left: 2rem;
+
+        font-size: 1.5rem;
+    }
+
+
+    /* Hide mobile SVG on large screens */
+    .weather-icon {
+        display: none;
+    }
+
+
+    /* Footer */
+    footer {
+        padding: 2rem;
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================
+   EXTRA LARGE SCREEN
+   ========================================= */
+
+@media screen and (min-width: 1024px) {
+
+    .hero {
+        height: 650px;
+    }
+
+
+    .data {
+        top: 3rem;
+        left: 3rem;
+    }
+
+
+    .weather {
+        right: 3rem;
+        bottom: 3rem;
+    }
+
+
+    .data,
+    .weather {
+        transition: transform 0.2s ease;
+    }
+
+
+    .data:hover,
+    .weather:hover {
+        transform: translateY(-4px);
+    }
+}

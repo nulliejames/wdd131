@@ -1,0 +1,358 @@
+/* =========================
+   GLOBAL VARIABLES
+========================= */
+
+:root {
+    --green: #08811e;
+    --dark-green: #006400;
+    --blue: #66a7d6;
+    --white: #ffffff;
+    --dark: #222222;
+    --card-bg: rgba(255, 255, 255, 0.88);
+    --heading-size: 2rem;
+}
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+    line-height: 1.5;
+    background: #ebf1e8;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: var(--green);
+    color: var(--dark);
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    position: relative;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    border-top: 20px solid var(--blue);
+    background-image: url('../images/sierra-leone-large.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero picture,
+.hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero img {
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================
+   DATA CARD
+========================= */
+
+.data {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 320px;
+    background-color: var(--card-bg);
+    box-shadow: 0 3px 10px rgba(15, 12, 12, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(2px);
+}
+
+
+/* DATA HEADING */
+
+.data h2 {
+    margin: 0;
+    padding: 20px;
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-size: var(--heading-size);
+}
+
+
+/* DATA CONTENT */
+
+.data-content {
+    padding: 20px;
+}
+
+.data-content p {
+    margin: 8px 0;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.data-content strong,
+.weather-content strong {
+    font-weight: 700;
+}
+
+
+/* =========================
+   WEATHER CARD
+========================= */
+
+.weather {
+    position: absolute;
+    right: 20px;
+    bottom: 35px;
+    width: 320px;
+    background-color: var(--card-bg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(2px);
+}
+
+
+/* WEATHER HEADING */
+
+.weather h2 {
+    margin: 0;
+    padding: 20px;
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-size: var(--heading-size);
+    position: relative;
+}
+
+
+/* =========================
+   LARGE SCREEN WEATHER ICON
+========================= */
+
+/*
+   The assignment requires a pseudo-element
+   after the word "Weather".
+*/
+
+.weather h2::after {
+    content: "⛅";
+    margin-left: 20px;
+    font-size: 1.5rem;
+}
+
+
+/* =========================
+   MOBILE WEATHER SVG
+========================= */
+
+.weather-icon {
+    display: none;
+    width: 45px;
+    height: 45px;
+}
+
+
+/* WEATHER CONTENT */
+
+.weather-content {
+    padding: 20px;
+}
+
+.weather-content p {
+    margin: 8px 0;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    min-height: 145px;
+    background-color: var(--green);
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* =========================
+   MOBILE MEDIA QUERY
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        min-height: 110px;
+    }
+
+    header h1 {
+        font-size: 2.3rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 0 1.25rem;
+    }
+
+    /* Hero becomes normal content */
+
+    .hero {
+        height: 280px;
+        border-top-width: 12px;
+        background-image: url('../images/sierra-leone-small.webp');
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    /* Data card */
+
+    .data {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: min(92vw, 420px);
+        margin: 0 auto;
+    }
+
+
+    /* Weather card */
+
+    .weather {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: min(92vw, 420px);
+        margin: 0 auto;
+    }
+
+
+    /*
+       Mobile uses the SVG instead
+       of the desktop pseudo-element.
+    */
+
+    .weather h2::after {
+        display: none;
+    }
+
+    .weather-icon {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 0.9rem;
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .data h2,
+    .weather h2 {
+        font-size: 1.6rem;
+        padding: 1rem 1.25rem;
+    }
+
+
+    .data-content,
+    .weather-content {
+        padding: 1rem 1.1rem;
+    }
+
+    .data-content p,
+    .weather-content p {
+        margin: 0.55rem 0;
+        text-align: left;
+        line-height: 1.5;
+        font-size: 0.98rem;
+    }
+
+    .data-content strong,
+    .weather-content strong {
+        display: inline-block;
+        min-width: 7.25rem;
+    }
+
+    footer {
+        min-height: 120px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .hero {
+        height: 230px;
+    }
+
+    .data,
+    .weather {
+        width: min(94vw, 360px);
+    }
+
+    .data h2,
+    .weather h2 {
+        font-size: 1.4rem;
+    }
+
+    .data-content p,
+    .weather-content p {
+        font-size: 0.92rem;
+    }
+
+    .weather-icon {
+        width: 36px;
+        height: 36px;
+    }
+}
