@@ -1,0 +1,23 @@
+@media (min-width: 56em) {
+    h2 {
+        display: block;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    nav a {
+        display: block;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+}

@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "wdth" 100,
+        "GRAD" 0,
+        "XOPQ" 96,
+        "XTRA" 468,
+        "YOPQ" 79,
+        "YTAS" 750,
+        "YTDE" -203,
+        "YTFI" 738,
+        "YTLC" 514,
+        "YTUC" 712;
+}
+
+header {
+    display: block;
+    background-color: rgb(37, 37, 117);
+    color: white;
+    padding: 1rem;
+    min-height: 5rem;
+}
+
+h2 {
+    display: block;
+    float: left;
+    clear: both;
+}
+
+nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: fit-content;
+}
+
+/*ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}*/
+
+
+nav a {
+    display: none;
+    text-decoration: none;
+    color: white;
+    text-align: right;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+nav a:hover {
+    color: #000;
+    background-color: white;
+}
+
+main {
+    clear: both;
+    padding: .5rem;
+    max-width: 59em;
+    margin: 0 auto;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+#pic {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 1rem;
+    place-items: center;
+}
+
+img {
+    width: 15rem;
+    height: auto;
+    margin: .5rem;
+    box-shadow: 0 0 10px black;
+}
+
+footer {
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    padding: .5rem;
+}
+
+#menu {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    background-color: darkblue;
+    color: white;
+    float: right;
+}
+
+#menu::before {
+    content: "≡";
+}
+
+#menu.open::before {
+    content: "X";
+}
+
+.open a {
+    display: block;
+}
+
+.open h2 {
+    display: none;
+}
+
+section {
+    background-color: rgb(121, 120, 120);
+    text-align: center;
+    width: 18rem;
+    margin: .5rem;
+    border: 1px solid rgba(0, 0, 0, .4);
+}
+
+.label {
+    font-weight: bold;
+}
+
+h3 {
+    padding: .3rem;
+    color: rgb(43, 43, 99);
+}
