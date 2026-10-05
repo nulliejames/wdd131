@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    color-scheme: light;
+    --ink: #20343a;
+    --muted: #52666b;
+    --paper: #f4f5ef;
+    --surface: #ffffff;
+    --accent: #087e75;
+    --accent-dark: #075d57;
+    --line: #cbd5d1;
+    --focus: #c04c2d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--paper);
+    background-image: radial-gradient(#d9e1db 0.75px, transparent 0.75px);
+    background-size: 18px 18px;
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    padding: 1.25rem 1rem;
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+main {
+    width: min(100% - 2rem, 36rem);
+    margin: 2rem auto;
+    flex: 1;
+}
+
+.required-note {
+    margin: 0 0 0.5rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.required {
+    color: #a83e24;
+    font-weight: 700;
+}
+
+form,
+.confirmation {
+    padding: clamp(1.25rem, 5vw, 2rem);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--accent);
+    background: var(--surface);
+    box-shadow: 0 12px 32px rgb(32 52 58 / 8%);
+}
+
+form>label,
+fieldset legend {
+    display: block;
+    margin: 1rem 0 0.4rem;
+    font-weight: 700;
+}
+
+form>label:first-child {
+    margin-top: 0;
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    min-height: 2.9rem;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #9aa9a5;
+    border-radius: 3px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+}
+
+textarea {
+    min-height: 7rem;
+    resize: vertical;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 1.2rem 0 0;
+    padding: 0;
+    border: 0;
+}
+
+fieldset legend {
+    padding: 0;
+}
+
+.rating-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.25rem;
+}
+
+.rating-list label {
+    display: flex;
+    min-height: 3.2rem;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--accent-dark);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.rating-list input,
+.features-options input {
+    accent-color: var(--accent);
+}
+
+.features-options label {
+    display: flex;
+    min-height: 2.5rem;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.25rem 0;
+}
+
+.features-options input {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.optional {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.submit-button {
+    width: 100%;
+    min-height: 3rem;
+    margin-top: 1.5rem;
+    border: 0;
+    border-radius: 3px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font: 700 1rem 'DM Sans', sans-serif;
+}
+
+.submit-button:hover,
+.submit-button:focus-visible {
+    background: var(--accent-dark);
+}
+
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+}
+
+.confirmation h2 {
+    font-size: 1.5rem;
+}
+
+#review-count {
+    margin: 0.6rem 0 1.5rem;
+    color: var(--muted);
+}
+
+dl {
+    margin: 0 0 1.5rem;
+}
+
+dt {
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+dd {
+    margin: 0.2rem 0 0;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+footer {
+    padding: 1rem;
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.2rem;
+}
+
+@media (min-width: 40rem) {
+    main {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .features-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+    }
+
+    .features-options legend {
+        grid-column: 1 / -1;
+    }
+}
