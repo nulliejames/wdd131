@@ -7,17 +7,12 @@ const products = [
 ];
 
 const productSelect = document.querySelector("#product");
-const productNameInput = document.querySelector("#product-name");
 
 products.forEach((product) => {
     const option = document.createElement("option");
     option.value = product.id;
     option.textContent = product.name;
     productSelect.append(option);
-});
-
-productSelect.form.addEventListener("submit", () => {
-    productNameInput.value = productSelect.selectedOptions[0].textContent;
 });
 
 const currentYear = new Date().getFullYear();

@@ -2,6 +2,13 @@ const reviewParams = new URLSearchParams(window.location.search);
 const details = document.querySelector("#review-details");
 const reviewCount = document.querySelector("#review-count");
 const submittedProduct = reviewParams.get("product");
+const productNames = {
+    "fc-1888": "Flux Capacitor",
+    "fc-2050": "Power Laces",
+    "fs-1987": "Time Circuits",
+    "ac-2000": "Low Voltage Reactor",
+    "jj-1969": "Warp Equalizer"
+};
 
 if (submittedProduct) {
     let count;
@@ -14,7 +21,7 @@ if (submittedProduct) {
     reviewCount.textContent = `You have submitted ${count} review${count === 1 ? "" : "s"}.`;
 
     const fields = [
-        ["Product", reviewParams.get("product-name") || submittedProduct],
+        ["Product", productNames[submittedProduct] || submittedProduct],
         ["Rating", `${reviewParams.get("rating") || "Not provided"} out of 5`],
         ["Date of Installation", reviewParams.get("installation-date") || "Not provided"],
         ["Useful Features", reviewParams.getAll("features").join(", ") || "None selected"],
