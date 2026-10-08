@@ -2,6 +2,7 @@
   --green: #1eb53a;
   --forest: #075c3b;
   --blue: #0072c6;
+  --deep-blue: #07508a;
   --pale-green: #eaf6ec;
   --pale-blue: #eaf4fb;
   --ink: #18352b;
@@ -25,24 +26,29 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 img {
   max-width: 100%;
   display: block;
 }
 
 .container {
-  width: min(1120px, 90vw);
+  width: min(1160px, calc(100% - 3rem));
   margin: 0 auto;
 }
 
 .site-header {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   background:
     radial-gradient(ellipse at 85% 110%, rgba(255, 255, 255, 0.14), transparent 34rem),
     linear-gradient(125deg, var(--forest), #087e53 62%, var(--blue));
   color: var(--white);
-  padding: 4rem 0 3rem;
+  padding: 3.75rem 0 2.25rem;
 }
 
 .site-header::after {
@@ -63,9 +69,10 @@ img {
 .eyebrow {
   margin: 0 0 0.75rem;
   font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  opacity: 0.8;
+  color: #d9f6e1;
 }
 
 h1,
@@ -78,25 +85,73 @@ h3 {
 h1 {
   margin-bottom: 0.5rem;
   font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
 }
 
 .tagline {
   max-width: 52rem;
   margin: 0;
-  font-size: 1.1rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
   opacity: 0.96;
 }
 
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.8rem;
+}
+
+.page-nav a {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.page-nav a:hover {
+  background: var(--white);
+  color: var(--forest);
+}
+
+.page-nav a:focus-visible {
+  outline: 3px solid #f6d878;
+  outline-offset: 3px;
+}
+
 .section {
-  padding: 2.2rem 0;
+  padding: 2.5rem 0;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 1.25rem;
+}
+
+.section-kicker {
+  margin: 0 0 0.3rem;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .section h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
   color: var(--forest);
   font-size: clamp(1.8rem, 2vw, 2.5rem);
   letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.section-intro {
+  max-width: 54rem;
+  margin: -0.35rem 0 1.25rem;
+  color: var(--muted);
+  font-size: 1.08rem;
 }
 
 .card-grid,
@@ -114,7 +169,7 @@ h1 {
 .type-block {
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 1rem;
+  border-radius: 1.1rem;
   box-shadow: 0 12px 30px var(--shadow);
   padding: 1.5rem;
   transition: transform 180ms ease, box-shadow 180ms ease;
@@ -131,16 +186,34 @@ h1 {
   color: var(--forest);
 }
 
+.card h3,
+.type-block h3 {
+  margin-bottom: 0.6rem;
+}
+
+.card p:last-child,
+.type-block p:last-child {
+  margin-bottom: 0;
+}
+
 .scenario-list,
 .naming-list {
   margin: 0;
   padding-left: 1.25rem;
   font-size: 1.05rem;
+  max-width: 68rem;
 }
 
 .scenario-list li,
 .naming-list li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.8rem;
+  padding-left: 0.25rem;
+}
+
+.scenario-list li::marker,
+.naming-list li::marker {
+  color: var(--green);
+  font-weight: 700;
 }
 
 .palette {
@@ -151,7 +224,7 @@ h1 {
 }
 
 .swatch {
-  min-height: 138px;
+  min-height: 148px;
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
@@ -166,6 +239,7 @@ h1 {
 .swatch span {
   font-family: "Poppins", "Segoe UI", sans-serif;
   font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .swatch span,
@@ -175,6 +249,7 @@ h1 {
 
 .swatch small {
   color: var(--muted);
+  line-height: 1.35;
 }
 
 .swatch-1 { background: var(--green); }
@@ -183,15 +258,21 @@ h1 {
 .swatch-4 { background: var(--pale-green); }
 .swatch-5 { background: var(--pale-blue); }
 
-.swatch-1 small,
+.swatch-1 small { color: var(--forest); }
 .swatch-3 small {
   color: rgba(255, 255, 255, 0.9);
 }
 
 .note {
-  margin: 0;
+  margin: 0 0 2rem;
   font-size: 1.05rem;
   color: var(--muted);
+}
+
+.subsection-title {
+  margin: 2.1rem 0 1rem;
+  color: var(--forest);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
 }
 
 .typography-grid {
@@ -199,9 +280,10 @@ h1 {
 }
 
 .sample {
-  display: inline-block;
-  margin: 0 0 0.75rem;
-  font-size: 1.6rem;
+  margin: 0 0 0.65rem;
+  color: var(--deep-blue);
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+  line-height: 1.35;
 }
 
 .sample-heading {
@@ -215,11 +297,18 @@ h1 {
 }
 
 .wireframe-grid {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: minmax(230px, 0.65fr) minmax(0, 1.6fr);
+  align-items: start;
+  gap: 1.75rem;
 }
 
 .wireframe {
   margin: 0;
+}
+
+.wireframe-mobile .wireframe-image {
+  width: min(100%, 350px);
+  margin: 0 auto;
 }
 
 .wireframe-image {
@@ -227,8 +316,9 @@ h1 {
   width: 100%;
   height: auto;
   border: 1px solid var(--line);
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   box-shadow: 0 12px 30px var(--shadow);
+  background: var(--white);
 }
 
 figcaption {
@@ -241,28 +331,66 @@ figcaption {
   background: linear-gradient(110deg, var(--forest), var(--blue));
   color: var(--white);
   text-align: center;
-  padding: 1.25rem 0;
+  padding: 1.4rem 1rem;
 }
 
 .site-footer p {
   margin: 0;
 }
 
-@media (max-width: 640px) {
-  .site-header {
-    padding-top: 3rem;
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 2rem, 560px);
   }
 
-  .wireframe-grid {
+  .site-header {
+    padding: 2.75rem 0 1.75rem;
+  }
+
+  .page-nav {
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+  }
+
+  .page-nav a {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .wireframe-grid,
+  .card-grid,
+  .typography-grid {
     grid-template-columns: 1fr;
+  }
+
+  .wireframe-desktop .wireframe-image {
+    width: 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: min(100% - 1.5rem, 560px);
+  }
+
+  .card,
+  .type-block {
+    padding: 1.15rem;
   }
 }

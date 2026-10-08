@@ -20,15 +20,24 @@
   <body>
     <header class="site-header">
       <div class="container">
-        <p class="eyebrow">WDD 131 Project</p>
+        <p class="eyebrow">WDD 131 · Website planning document</p>
         <h1>Coastal Sierra Travel</h1>
-        <p class="tagline">A welcoming guide to the beauty, culture, and adventure of Sierra Leone.</p>
+        <p class="tagline">
+          A welcoming guide to the beauty, culture, and adventure of Sierra Leone.
+        </p>
+        <nav class="page-nav" aria-label="Site plan sections">
+          <a href="#identity">Project</a>
+          <a href="#audience">Audience</a>
+          <a href="#visual-design">Visual design</a>
+          <a href="#wireframes">Wireframes</a>
+        </nav>
       </div>
     </header>
 
     <main class="container">
-      <section class="section">
-        <h2>1. Site name and purpose</h2>
+      <section class="section" id="identity">
+        <p class="section-kicker">01 · Project overview</p>
+        <h2>Site name and purpose</h2>
         <div class="card-grid">
           <article class="card">
             <h3>Site Name</h3>
@@ -50,8 +59,13 @@
         </div>
       </section>
 
-      <section class="section">
-        <h2>2. Target audience and scenarios</h2>
+      <section class="section" id="audience">
+        <p class="section-kicker">02 · Who the site serves</p>
+        <h2>Target audience and scenarios</h2>
+        <p class="section-intro">
+          The site is for curious first-time visitors, families planning a holiday,
+          and Sierra Leoneans who want to share local places and experiences.
+        </p>
         <ul class="scenario-list">
           <li>
             <strong>Scenario 1:</strong> Where can I find the best places to visit, local foods to try,
@@ -69,18 +83,25 @@
       </section>
 
       <section class="section">
-        <h2>3. Naming conventions</h2>
+        <p class="section-kicker">03 · Project organization</p>
+        <h2>Naming conventions</h2>
+        <p class="section-intro">
+          Use descriptive, lowercase names with hyphens between words. Keep file
+          extensions lowercase and use the appropriate extension for each file type.
+        </p>
         <ul class="naming-list">
-          <li>project/siteplan.html — main project planning document</li>
-          <li>project/siteplan.css — stylesheet for the site plan design</li>
-          <li>images/ — shared image assets for the final website</li>
-          <li>styles/ — reusable site styling for other pages</li>
-          <li>scripts/ — JavaScript files for interactivity and date updates</li>
+          <li><code>project/siteplan.html</code> — HTML page names use lowercase and the <code>.html</code> extension.</li>
+          <li><code>project/siteplan.css</code> — stylesheet names use lowercase and the <code>.css</code> extension.</li>
+          <li><code>project/images/coastal-sierra-travel-mobile-wireframe.png</code> and <code>project/images/coastal-sierra-travel-desktop-wireframe.png</code> — image filenames use lowercase kebab-case and the <code>.png</code> extension.</li>
+          <li><code>images/</code> — shared image assets for the final website.</li>
+          <li><code>styles/</code> — reusable site styling for other pages.</li>
+          <li><code>scripts/</code> — JavaScript files for interactivity and date updates.</li>
         </ul>
       </section>
 
-      <section class="section">
-        <h2>4. Color scheme</h2>
+      <section class="section" id="visual-design">
+        <p class="section-kicker">04 · Visual identity</p>
+        <h2>Color scheme</h2>
         <div class="palette" role="group" aria-label="Color palette for Coastal Sierra Travel">
           <div class="swatch swatch-1">
             <span>#1EB53A</span>
@@ -110,46 +131,51 @@
           keeps the page bright and easy to read. Soft green and blue tints support the three
           flag colors without competing with them.
         </p>
-      </section>
 
-      <section class="section">
-        <h2>5. Typography</h2>
+        <h2 class="subsection-title">Typography</h2>
         <div class="typography-grid">
-          <div class="type-block">
-            <h3>Headings</h3>
-            <p class="sample sample-heading">Poppins</p>
-            <p>Used for titles, section headings, and important labels.</p>
-          </div>
+          <article class="type-block">
+            <h3>Headings · Poppins</h3>
+            <p class="sample sample-heading">Explore Sierra Leone</p>
+            <p>Used for page titles, section headings, and important labels.</p>
+          </article>
 
-          <div class="type-block">
-            <h3>Body Text</h3>
-            <p class="sample sample-body">Source Sans 3</p>
+          <article class="type-block">
+            <h3>Body · Source Sans 3</h3>
+            <p class="sample sample-body">Find a place to begin your journey.</p>
             <p>Used for paragraphs, lists, and general content readability.</p>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section class="section">
-        <h2>6. Wireframes</h2>
+      <section class="section" id="wireframes">
+        <p class="section-kicker">05 · Layout planning</p>
+        <h2>Home page wireframes</h2>
+        <p class="section-intro">
+          The responsive home page moves from a compact, single-column mobile layout
+          to a wider desktop layout with a two-column hero and destination cards.
+        </p>
         <div class="wireframe-grid">
-          <figure class="wireframe">
+          <figure class="wireframe wireframe-mobile">
             <img
               class="wireframe-image"
-              src="images/coastal-sierra-mobile-wireframe.png"
+              src="images/coastal-sierra-travel-mobile-wireframe.png"
               alt="Mobile home-page wireframe showing a header, menu, Sierra Leone coast hero, explore button, destination cards, travel tip, and footer."
-              width="430"
-              height="1080"
+              width="390"
+              height="844"
+              loading="lazy"
             >
             <figcaption>Mobile home-page wireframe: a single-column layout with a compact menu, coastal hero, destinations, and travel tip.</figcaption>
           </figure>
 
-          <figure class="wireframe">
+          <figure class="wireframe wireframe-desktop">
             <img
               class="wireframe-image"
-              src="images/coastal-sierra-desktop-wireframe.png"
+              src="images/coastal-sierra-travel-desktop-wireframe.png"
               alt="Desktop home-page wireframe showing branded navigation, a two-column coastal hero, three destination cards, a travel-planning callout, and footer."
               width="1440"
-              height="1000"
+              height="900"
+              loading="lazy"
             >
             <figcaption>Desktop home-page wireframe: a wide hero, clear navigation, three destination cards, and a travel-planning callout.</figcaption>
           </figure>
@@ -159,6 +185,7 @@
 
     <footer class="site-footer">
       <p>Coastal Sierra Travel • Site Plan</p>
+      <p class="footer-author">Created by Nullie James</p>
     </footer>
   </body>
 </html>
